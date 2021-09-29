@@ -25,9 +25,7 @@
     mensagem="Senha obrigatória"></app-mensagem>
   </div>
 
-  <div class="d-grid gap-2">
-    <button [disabled]="loginForm.invalid" class="btn btn-primary" type="submit">Login</button>
-  </div>
+  <button [disabled]="loginForm.invalid" class="btn btn-primary btn-block" type="submit">Login</button>
 </form>
 
 <p>Não é um usuário? <a [routerLink]="['/home/novousuario']">Cadastre-se</a></p>
