@@ -17,7 +17,7 @@ export class TokenService {
     localStorage.setItem(KEY, token)
   }
 
-  excluiToken(token: string){
+  excluiToken(){
     //limpamos o item KEY, para casos de loadout, etc.
     localStorage.removeItem(KEY)
   }
