@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioService {
-  //esse serviço é responsável por decodificar o token e passar a informação para os componentes.
+  //esse serviço é responsável por decodificar o token e passar a informação dele para os componentes.
 
   //BehaviorSubject: toda vez que algum componente/serviço faz algum subscribe nesse Observable, ele envia o último dado que estava presente. (ele guarda o estado)
   private usuarioSubject = new BehaviorSubject<Usuario>({});
@@ -22,7 +22,7 @@ export class UsuarioService {
   private decodificaJWT(){
     const token = this.tokenService.retornaToken();
     const usuario = jwt_decode(token) as Usuario;
-    //metodo next: todos que se inscreveram nesse serviço recebem o usuário
+    //metodo next: todos que se inscreveram nesse serviço recebem usuário
     this.usuarioSubject.next(usuario);
   }
 
@@ -32,8 +32,10 @@ export class UsuarioService {
   }
 
   salvaToken(token: string){
+    //chama o metodo e salva no localstorage
     this.tokenService.salvaToken(token);
-    this.decodificaJWT;
+    //chama o metodo para espalhar a informação entre os componentes
+    this.decodificaJWT();
   }
 
   logout(){
