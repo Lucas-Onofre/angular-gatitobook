@@ -6,6 +6,7 @@ const KEY = 'token';
   providedIn: 'root'
 })
 export class TokenService {
+  //serviço responsável pela manipulação do token: retornar valor, salvar/excluir valor no localstorage e verificar se existe.
 
   retornaToken(){
     //tenta retornar o item KEY, caso não encontre valor retornará em branco

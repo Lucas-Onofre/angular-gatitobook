@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['animais'])
     },
     error => {
-      alert('usuario ou senha inválido.');
+      alert('Usuário ou senha inválidos.');
       console.log(error);
     }
     );
